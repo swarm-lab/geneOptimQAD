@@ -8,7 +8,7 @@ geneOptim(fn, ..., N = 100, G = 500, min_val, max_val, p_mut = 0.25,
   w_mut = 0.2, p_cross = 0.1, n_cores = 1, .packages = NULL)
 }
 \arguments{
-\item{fn}{Function to maximize. The ouput of the function should be a single
+\item{fn}{Function to minimize The ouput of the function should be a single
 numeric value.}
 
 \item{N}{Number of individual in the population (default: 100).}
@@ -33,10 +33,11 @@ individuals randomly chosen in the population (default: 500).}
 A matrix of the final population.
 }
 \description{
-Maximization of a function using a quick & dirty algorithm.
+Minimization of a function using a quick & dirty algorithm.
 }
 \examples{
 #TODO
+
 }
 \seealso{
 \code{\link{}}

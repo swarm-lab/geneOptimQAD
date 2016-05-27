@@ -1,25 +1,8 @@
-# Generic genetic optimization function.
-#
-# Args:
-#   fn: Function to minimize. The ouput of the function should be a single number.
-#   ...: Parameters for fn.
-#   N: Number of individual in the population (default: 100).
-#   T: Number of "generations". A generation actually corresponds to a reproductive event between the best two individuals of a group of four individuals randomly chosen in the population (default: 500).
-#   minVal: Vector of the minimum acceptable values for each gene.
-#   maxVal: Vector of the maximum acceptable values for each gene.
-#   pmut: Probability that a gene mutate (default: 0.25).
-#   wmut: Maximum variation allowed through mutation (default: 0.25).
-#   pcross: Probability of crossover (default: 0.1).
-#   ncores: Number of available cores for parallel computation (default: 1).
-#
-# Returns:
-#   A matrix of the final population.
-
 #' Quick & dirty genetic algorithm
 #'
-#' Maximization of a function using a quick & dirty algorithm.
+#' Minimization of a function using a quick & dirty algorithm.
 #'
-#' @param fn Function to maximize. The ouput of the function should be a single
+#' @param fn Function to minimize The ouput of the function should be a single
 #'  numeric value.
 #'
 #' @param N Number of individual in the population (default: 100).
@@ -46,6 +29,8 @@
 #'
 #' @examples
 #' #TODO
+#'
+#' @export
 geneOptim <- function(fn, ..., N = 100, G = 500, min_val, max_val,
                       p_mut = 0.25, w_mut = 0.2, p_cross = 0.1,
                       n_cores = 1, .packages = NULL) {
