@@ -84,7 +84,42 @@ createOffspring <- function(genome1, genome2, min_val, max_val, p_mut = 0.25, w_
 }
 
 
+#' Track optimization progress
+#'
+#' Display current state and history of the genetic optimization.
+#'
+#' @param pop Matrix of the gene values of the current population. Each line
+#'  correspond to an individual in the initial population. Each column correspond
+#'  to the value of each gene. The last column corresponds to the fitness of each
+#'  individual.
+#'
+#' @param k Number of genes.
+#'
+#' @param minfit Vector of the minimum fitness for each generation.
+#'
+#' @param meanfit Vector of the average fitness for each generation.
+#'
+#' @return Plot the minimum and average fitness for the last 100 generations.
+#'
+#' @seealso \code{\link{}}
+#'
+#' @examples
+#' #TODO
+progress <- function(pop, k, min_fit, mean_fit) {
+  print("Current best parameters:")
+  print(paste(names(pop)[1:k], sep = "	"))
+  print(paste(pop[1, 1:k], sep = "	"))
+  print(paste("Min fit =", min_fit[length(min_fit)], "- Mean fit =", mean_fit[length(mean_fit)]))
 
+  if (length(mean_fit) > 100) {
+    plot(mean_fit[(length(mean_fit) - 100):length(mean_fit)] ~ c((length(mean_fit) - 100):length(mean_fit)),
+         type = "l", ylim = c(0, max(mean_fit[(length(mean_fit) - 100):length(mean_fit)])))
+    lines(min_fit[(length(min_fit) - 100):length(min_fit)] ~ c((length(min_fit) - 100):length(min_fit)), col = "red")
+  } else {
+    plot(mean_fit ~ c(1:length(mean_fit)), ylim = c(0, max(mean_fit)), type = "l")
+    lines(min_fit ~ c(1:length(min_fit)), col = "red")
+  }
+}
 
 
 
