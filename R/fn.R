@@ -95,9 +95,9 @@ createOffspring <- function(genome1, genome2, min_val, max_val, p_mut = 0.25, w_
 #'
 #' @param k Number of genes.
 #'
-#' @param minfit Vector of the minimum fitness for each generation.
+#' @param min_fit Vector of the minimum fitness for each generation.
 #'
-#' @param meanfit Vector of the average fitness for each generation.
+#' @param mean_fit Vector of the average fitness for each generation.
 #'
 #' @return Plot the minimum and average fitness for the last 100 generations.
 #'

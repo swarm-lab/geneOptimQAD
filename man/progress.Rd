@@ -14,9 +14,9 @@ individual.}
 
 \item{k}{Number of genes.}
 
-\item{minfit}{Vector of the minimum fitness for each generation.}
+\item{min_fit}{Vector of the minimum fitness for each generation.}
 
-\item{meanfit}{Vector of the average fitness for each generation.}
+\item{mean_fit}{Vector of the average fitness for each generation.}
 }
 \value{
 Plot the minimum and average fitness for the last 100 generations.
